@@ -18,6 +18,7 @@ const orders = [
   { id: 2, name: 'Smartwatch X', discount: 60, isLimited: true },
   { id: 3, name: 'Tablet Mini', discount: 15, isLimited: false },
   { id: 4, name: 'ANC Headphones', discount: 55, isLimited: true },
+  { id: 5, name: 'laptop', discount: 500, isLimited: true },
 ]
 </script>
 <style scoped>
