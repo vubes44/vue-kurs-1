@@ -1,9 +1,9 @@
 <template>
-  <PromotionList />
+  <Base />
 </template>
 
 <script setup>
-import PromotionList from './components/6-2/PromotionList.vue'
+import Base from './components/5/Base.vue'
 </script>
 
 <style scoped></style>
