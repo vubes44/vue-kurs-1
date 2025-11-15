@@ -6,7 +6,6 @@
       <h3>Name: {{ order.name }}</h3>
       Dicount: {{ order.discount }}%<br /><br />
       <span v-show="order.isLimited"> ⏳Limited Time Offer!</span>
-      <!-- Użyłem v-show zamiast v-if, bo niejawnie v-if jest pierwsze -->
     </li>
   </ul>
 </template>
