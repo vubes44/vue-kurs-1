@@ -1,11 +1,9 @@
-<script setup></script>
-
 <template>
-  <h1>Tymoteusz</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <PromotionList />
 </template>
+
+<script setup>
+import PromotionList from './components/6/PromotionList.vue'
+</script>
 
 <style scoped></style>
