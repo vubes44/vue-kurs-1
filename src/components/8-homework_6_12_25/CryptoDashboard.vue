@@ -11,11 +11,11 @@
     </li>
   </ul>
 
-  Is your investment profitable? {{ isTheInvestmentProfitableText }}
+  Is your investment profitable? {{ investmentProfitableText }}
 </template>
 
 <script setup>
-import { ref } from 'vue'
+import { ref, computed } from 'vue'
 import CryptoPriceDashboardText from './CryptoPriceDashboardText.vue'
 import PriceHistoryText from './PriceHistoryText.vue'
 
@@ -26,15 +26,15 @@ const currentBitcoinPrice = ref(48000)
 const priceHistory = ref([48000])
 
 const marketInformation = ref('Price has not changed')
-const highestPriceObserved = ref(formatPrice(currentBitcoinPrice.value))
+const highestPriceObserved = ref(currentBitcoinPrice.value)
 
-const isTheInvestmentProfitable = ref(false)
-const isTheInvestmentProfitableText = ref('No')
+const isInvestmentProfitable = ref(false)
+const investmentProfitableText = computed(() => (isInvestmentProfitable.value ? 'Yes' : 'No'))
 
 setInterval(function () {
   const oldPrice = currentBitcoinPrice.value
-  let change = Math.floor(Math.random() * 6001) - 3000
-  currentBitcoinPrice.value += change
+  let newPrice = Math.floor(Math.random() * 6001) - 3000
+  currentBitcoinPrice.value += newPrice
   const priceDifference = currentBitcoinPrice.value - oldPrice
   if (currentBitcoinPrice.value > highestPriceObserved.value) {
     highestPriceObserved.value = currentBitcoinPrice.value
@@ -48,9 +48,7 @@ setInterval(function () {
     marketInformation.value = 'Price has not changed'
   }
 
-  isTheInvestmentProfitable.value = currentBitcoinPrice.value > bitcoinPurchasePrice.value
-
-  isTheInvestmentProfitableText.value = isTheInvestmentProfitable.value ? 'Yes' : 'No'
+  isInvestmentProfitable.value = currentBitcoinPrice.value > bitcoinPurchasePrice.value
 
   priceHistory.value.push(currentBitcoinPrice.value)
 }, 1000)
