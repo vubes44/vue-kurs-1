@@ -15,8 +15,8 @@ const props = defineProps({
   whoCanWrite: String,
 })
 
-const formatPermission = (val) => {
-  switch (val) {
+const formatPermission = (permission) => {
+  switch (permission) {
     case 'everyone':
       return 'wszyscy'
     case 'friends':
@@ -24,7 +24,7 @@ const formatPermission = (val) => {
     case 'nobody':
       return 'nikt'
     default:
-      return val
+      return permission
   }
 }
 </script>

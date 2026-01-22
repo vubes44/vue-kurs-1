@@ -14,7 +14,7 @@
         :disabled="!isPublic"
         @change="messagePermission = $event"
       />
-      <p v-if="!isPublic" class="section__p--disabled">
+      <p v-if="!isPublic" class="section__warning">
         profil prywatny i nie można wysyłać wiadomosci
       </p>
     </section>
@@ -54,7 +54,7 @@ section {
   margin: 2rem 0;
 }
 
-.section__p--disabled {
+.section__warning {
   color: #494949;
   font-size: 0.9rem;
   margin-top: 0.5rem;

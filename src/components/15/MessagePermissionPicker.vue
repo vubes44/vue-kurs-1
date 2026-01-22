@@ -1,39 +1,39 @@
 <template>
-  <div class="radio-group">
-    <label class="radio-group__label">
+  <div class="message-permission-picker">
+    <label class="radio-group-label">
       <input
         type="radio"
-        class="radio-group__label__input"
+        class="radio-group-input"
         name="msgPerm"
         value="everyone"
         :checked="value === 'everyone'"
-        :disabled="disabled"
+        :disabled
         @change="$emit('change', 'everyone')"
       />
       Wszyscy
     </label>
 
-    <label class="radio-group__label">
+    <label class="radio-group-label">
       <input
         type="radio"
-        class="radio-group__label__input"
+        class="radio-group-input"
         name="msgPerm"
         value="friends"
         :checked="value === 'friends'"
-        :disabled="disabled"
+        :disabled
         @change="$emit('change', 'friends')"
       />
       Tylko znajomi
     </label>
 
-    <label class="radio-group__label">
+    <label class="radio-group-label">
       <input
         type="radio"
-        class="radio-group__label__input"
+        class="radio-group-input"
         name="msgPerm"
         value="nobody"
         :checked="value === 'nobody'"
-        :disabled="disabled"
+        :disabled
         @change="$emit('change', 'nobody')"
       />
       Nikt
@@ -57,12 +57,12 @@ defineEmits(['change'])
 </script>
 
 <style scoped>
-.radio-group {
+.message-permission-picker {
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
 }
-.radio-group__label {
+.radio-group-label {
   font-family: 'Calibri';
   font-size: 1rem;
   cursor: pointer;
@@ -70,7 +70,7 @@ defineEmits(['change'])
   align-items: center;
   gap: 0.5rem;
 }
-.radio-group__label__input {
+.radio-group-input {
   cursor: pointer;
 }
 </style>
